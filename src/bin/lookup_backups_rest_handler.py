@@ -27,7 +27,7 @@ def setup_logger(level):
     file_handler = logging.handlers.RotatingFileHandler(log_file_path, maxBytes=25000000,
                                                         backupCount=5)
 
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p %z')
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
     return logger
